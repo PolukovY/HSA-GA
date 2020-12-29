@@ -1,0 +1,23 @@
+server:
+  port: 8881
+
+ga:
+  version: 1
+  tid: ${GA_TID:changeMe}
+
+management:
+  metrics:
+    export:
+      statsd:
+        flavor: telegraf
+        port: 8888
+        enabled: true
+#  server:
+#    port: 8083
+  endpoints:
+    web:
+# to change the metrics endpoints and name in it, url http://localhost:8082/actuator/jolokia
+#      base-path: /endpoints
+#      path-mapping.jolokia=customjmx
+      exposure:
+        include: jolokia

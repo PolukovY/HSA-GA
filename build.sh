@@ -1,0 +1,1 @@
+./mvnw package && docker build -t springio/transactions .
